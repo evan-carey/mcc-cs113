@@ -1,0 +1,33 @@
+Programming Exercise 1 (Ch. 7.1, pg. 367)
+
+Evan Carey, Nattamon Tangjitpornchai
+
+
+For each part, assume a, b, and c have already been created, and c is empty.
+
+// a. c = union of a and b
+
+c.addAll(a);
+c.addAll(b);
+
+
+// b. c = intersection of a and b
+
+c.addAll(a);
+c.retainAll(b);
+
+
+// c. c = a - b
+
+c.addAll(a);
+c.removeAll(b);
+
+
+// d. if (a is a subset of b) c = a;
+//    else c = b;
+
+if (b.containsAll(a)) {
+	c.addAll(a);
+} else {
+	c.addAll(b);
+}

@@ -1,0 +1,26 @@
+Programming Exercise 1 (Ch. 7.3, pg 383)
+
+Evan Carey, Nattamon Tangjitpornchai
+
+
+public static int findIndex(Object[] hashTable, Object o) {
+
+	int i = o.hashCode() % hashTable.length;
+	
+	if (i < 0) {
+		i += hashTable.length;
+	}
+
+	for (int j = 0; int j < hashTable.length; j++) {
+		
+		if (hashTable[i] == null || o.equals(hashTable[i])) {
+			break;
+		}
+		if (i >= hashTable.length) {
+			i = 0;
+		}
+		i++;
+	}
+
+	return i;
+}

@@ -1,0 +1,8 @@
+1. Adding a new assignment to end of ArrayList
+	Runtime: constant - O(1)
+2. Removing an assignment from the ArrayList
+	Runtime: linear - O(n)
+3. Displaying contents of ArrayList
+	Runtime: linear - O(n)
+4. Finding element with earliest due date
+	Runtime: linear - O(2n)

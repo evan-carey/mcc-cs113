@@ -1,0 +1,8 @@
+1. Adding new object to end of LinkedList
+	Runtime: linear - O(n)
+2. Adding new object to beginning of LinkedList
+	Runtime: constant - O(1)
+3. Removing head object from LinkedList
+	Runtime: constant - O(1)
+4. Removing any given object (by its data, not index) from LinkedList
+	Runtime: linear - O(n)

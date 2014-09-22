@@ -1,0 +1,56 @@
+Self Check 2 (Ch. 7.3, pg. 382)
+
+Evan Carey, Nattamon Tangjitpornchai
+
+
+// Compute hashCode() % table.length for lengths of 7 and 13
+
+Name	hashCode()	hashCode() % 7	hashCode() % 13
+"Tom"	84274		1		5
+"Dick"	2129869		0		1
+"Harry"	69496448	0		8
+"Sam"	82879		6		4
+"Pete"	2484038		4		11
+
+// What would be the position of each word in tables of these
+// sizes using open addressing and linear probing?
+
+For table of size 7:
+	"Tom" will first be inserted at [1]
+	"Dick" will be inserted at [0]
+	"Harry" will collide at [0], so it will go to [1], collide again, and then be inserted at [2]
+	"Sam" will be inserted at [6]
+	"Pete" will be inserted at [4]
+
+For table of size 13:
+	"Tom" will first be inserted at [5]
+	"Dick" will be inserted at [1]
+	"Harry" will be inserted at [8]
+	"Sam" will be inserted at [4]
+	"Pete" will be inserted at [11]
+
+// Answer the same question for chaining.
+
+For table of size 7:
+	[0] -> "Dick" -> "Harry"
+	[1] -> "Tom"
+	[2] null
+	[3] null
+	[4] -> "Pete"
+	[5] null
+	[6] -> "Sam"
+
+For table of size 13:
+	[0] null
+	[1] -> "Dick"
+	[2] null
+	[3] null
+	[4] -> "Sam"
+	[5] -> "Tom"
+	[6] null
+	[7] null
+	[8] -> "Harry"
+	[9] null
+	[10] null
+	[11] -> "Pete"
+	[12] null

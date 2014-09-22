@@ -1,0 +1,33 @@
+Programming Exercises 1 & 2 (Ch. 7.2, pg. 372)
+
+Evan Carey, Nattamon Tangjitpornchai
+
+
+// Programming Exercise 1
+
+private static Map <String, Integer> map = new HashMap<String, Integer>();
+
+
+// Programming Exercise 2
+
+public static void buildWordCounts(Scanner scan) {
+  
+  while (scan.hasNextLine()) {
+    String token = scan.getNextLine();
+    
+    String[] line = token.split(" ");	// split line into array of words
+    for (String word : line) {			// iterate over each word in line
+      Integer freq = map.get(word);		// freq = the number of times (value) the word
+										//	has been encountered so far
+
+      if (freq != null) {				// if this is true, we've encountered the
+										// word before,
+		map.put(word, freq + 1);		// so we add 1 to its frequencey
+
+      } else {							// if freq is null, we haven't encountered
+										// the word before,
+		map.put(word, 1);				// so we set its frequency to 1
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+Programming Exercise 2 (Ch. 7, pg. 367)
+
+Evan Carey, Nattamon Tangjitpornchai
+
+public String toString() {
+	StringBuilder sb = new StringBuilder();
+	for (E data : this) {
+		sb.append(data.toString() + ", ");
+	}
+	return sb.toString();
+}

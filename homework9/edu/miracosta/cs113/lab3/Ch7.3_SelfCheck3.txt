@@ -1,0 +1,26 @@
+Self Check 3 (Ch. 7.3, pg. 383)
+
+Evan Carey, Nattamon Tangjitpornchai
+
+
+// Show one sequence of insertions that would store the keys as shown.
+
+table.length = 5
+ - insert 6 (at [1] because 6 % 5 = 1)
+ - insert 14 (at [4] because 14 % 5 = 4)
+ - insert 24 (try to insert at [4] because 24 % 5 = 4,
+	but it collides at [4], so it wraps and is inserted at [0])
+ - insert 20 (try to insert at [0] because 20 % 5 = 0,
+	but it collides at [0], then collides at [1], so it is inserted at [2])
+
+// Which elements were placed in their current position because of collision?
+
+24 and 20
+
+// Show the table that would be formed by chaining
+
+	[0] -> 20
+	[1] -> 6
+	[2] null
+	[3] null
+	[4] -> 14 -> 24

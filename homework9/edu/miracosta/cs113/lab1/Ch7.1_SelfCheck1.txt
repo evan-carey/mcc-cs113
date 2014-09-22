@@ -1,0 +1,36 @@
+Self-Check 1 (Ch. 7.1, pg 366)
+
+Evan Carey, Nattamon Tangjitpornchai
+
+Set<String> s = new HashSet<String>();
+	- Create a new HashSet object that will contain String objects
+s.add("hello");
+	- Add the string "hello" to the HashSet s
+s.add("bye");
+	- Add the string "bye" to the HashSet s
+s.addAll(s);
+	- Attempt to add elements already in the set. It will return false, and s will be unchanged.
+Set<String> t = new TreeSet<String>();
+	- Create a new TreeSet object that will contain string objects. Unlike HashSet, objects in the t will be ordered.
+t.add("123");
+	- Add the string "123" to the TreeSet t.
+s.addAll(t);
+	- Add the string "123" to the HashSet s.
+System.out.println(s.containsAll(t));
+	- Output true, because all elements in t are also in s.
+System.out.println(t.containsAll(s));
+	- Output false, because s contains elements that aren't in t ("hello" and "bye").
+System.out.println(s.contains("ace"));
+	- Output false, because the string "ace" is not present in s.
+System.out.println(s.contains("123"));
+	- Output true, because "123" is present in s (as a result of the s.addAll(t) method call).
+s.retainAll(t);
+	- Will remove everything in s other than the string "123", because that is the intersection of s and t.
+	- Will return true.
+	- s now only contains "123".
+System.out.println(s.contains("123"));
+	- Output true, because s contains the string "123".
+t.retainAll(s);
+	- Will return false, because t will be unchanged (s and t contain the same element "123").
+System.out.println(t.contains("123"));
+	- Output true, because t contains the string "123".
